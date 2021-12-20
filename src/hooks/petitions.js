@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+//this method gets the data from de DB
 const useGet = (url='') => {
     const [ data, setData ] = useState()
     useEffect(()=>{
@@ -11,13 +11,14 @@ const useGet = (url='') => {
     return data
 }
 
+//this method posts new reactions
 const usePostReaction = (_id, reaction ) => {
 
 
     const api = 'https://ale31jofirst.herokuapp.com/api/reaction/' + _id
 
     const data = {
-        reaction: reaction
+        reaction
     }
 
     const options = {
@@ -40,7 +41,7 @@ const usePostReaction = (_id, reaction ) => {
 
 
 }
-
+//this method posts new comments or sessions
 const useSave = (data, id='') => {
     const api = 'https://ale31jofirst.herokuapp.com/api'
     const options = {

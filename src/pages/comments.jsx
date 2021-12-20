@@ -9,6 +9,7 @@ import { useGet } from "../hooks/petitions";
 const api = 'https://ale31jofirst.herokuapp.com/api/session/'
 
 const Comments = () => {
+    //opens the modal used to post a new comment
     const [ isOpen, setOpen ] = useState(false)
     const { id } = useParams()
     

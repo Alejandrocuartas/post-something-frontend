@@ -7,6 +7,8 @@ import { useGet } from "../hooks/petitions";
 const api = 'https://ale31jofirst.herokuapp.com/api'
 
 const Sessions = () => {
+
+    //open and close the modal used to post a new session
     const [ isOpen, setOpen ] = useState(false)
     
     const onClose = () => {
@@ -17,6 +19,7 @@ const Sessions = () => {
         setOpen(true)
     }
 
+    //get sessions
     const data = useGet(api)
     
     if(data) return(
