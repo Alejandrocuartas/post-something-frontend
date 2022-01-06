@@ -13,10 +13,10 @@ const App = () => {
         <BrowserRouter>
             <Layout>
                 <Routes>
-                    <Route element={<Sessions/>} exact path='/post-something-frontend/'></Route>
-                    <Route element={<Docs/>} exact path='/post-something-frontend/docs'></Route>
-                    <Route element={<Info/>} exact path='/post-something-frontend/info'></Route>
-                    <Route element={<Comments/>} exact path='/post-something-frontend/comments/:id'></Route>
+                    <Route element={<Sessions/>} path='/post-something-frontend/'></Route>
+                    <Route element={<Docs/>} path='/post-something-frontend/docs'></Route>
+                    <Route element={<Info/>} path='/post-something-frontend/info'></Route>
+                    <Route element={<Comments/>} path='/post-something-frontend/comments/:id'></Route>
                 </Routes>
             </Layout>
         </BrowserRouter>
