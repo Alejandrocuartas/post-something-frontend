@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Layout = lazy(() => import ("./components/Layout")) 
 const Sessions = lazy(() => import ("./pages/sessions")) 
@@ -12,12 +12,14 @@ const App = () => {
     return (
         <BrowserRouter>
             <Layout>
-                <Routes>
-                    <Route element={<Sessions/>} path='/post-something-frontend/'></Route>
-                    <Route element={<Docs/>} path='/post-something-frontend/docs'></Route>
-                    <Route element={<Info/>} path='/post-something-frontend/info'></Route>
-                    <Route element={<Comments/>} path='/post-something-frontend/comments/:id'></Route>
-                </Routes>
+                <Suspense>
+                    <Routes>
+                        <Route element={<Sessions/>} path='/post-something-frontend/'></Route>
+                        <Route element={<Docs/>} path='/post-something-frontend/docs'></Route>
+                        <Route element={<Info/>} path='/post-something-frontend/info'></Route>
+                        <Route element={<Comments/>} path='/post-something-frontend/comments/:id'></Route>
+                    </Routes>
+                </Suspense>    
             </Layout>
         </BrowserRouter>
     )
