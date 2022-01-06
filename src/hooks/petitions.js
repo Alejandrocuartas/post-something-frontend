@@ -42,7 +42,7 @@ const usePostReaction = (_id, reaction ) => {
 
 }
 //this method posts new comments or sessions
-const useSave = (data, id='') => {
+const useSave = async(data, id='') => {
     const api = 'https://ale31jofirst.herokuapp.com/api'
     const options = {
       method: 'POST',
@@ -53,15 +53,15 @@ const useSave = (data, id='') => {
     }
     const request = new Request(api+id, options)
 
-    fetch(request)
-        .then(response=>{
-            if(!response.ok) return alert('There was an error. Please try again.') 
-            if(id===''){
-                alert('Session saved.')
-            }else{
-                alert('Comment saved.')
-            }
-        })
+    await fetch(request)
+            .then(response=>{
+                if(!response.ok) return alert('There was an error. Please try again.') 
+                if(id===''){
+                    alert('Session saved.')
+                }else{
+                    alert('Comment saved.')
+                }
+            })
 }
 
 

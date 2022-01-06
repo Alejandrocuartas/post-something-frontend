@@ -23,12 +23,14 @@ const FormModal = ({ isOpen, onClose, formType, id='' }) => {
     }
   }
 
-  const onSave = () => {
+  const onSave = async() => {
       if((newForm.nickname.length >= 5 && newForm.content.length >= 10) || (newForm.nick.length>=5 && newForm.comment.length>=10)){
           if(formType==='session'){
-            useSave(newForm)
+            await useSave(newForm)
+            location.reload()
           }else{
-            useSave(newForm, `/session/${id}`)
+            await useSave(newForm, `/session/${id}`)
+            location.href = 'https://alejandrocuartas.github.io/post-something-frontend/'
           }
       }else{
         alert('The nickname must have at least 5 characters and the content 10.')
