@@ -58,10 +58,8 @@ const useSave = async(data, id='') => {
                 if(!response.ok) return alert('There was an error. Please try again.') 
                 if(id===''){
                     alert('Session saved.')
-                    location.reload()
                 }else{
                     alert('Comment saved.')
-                    location.href = 'https://alejandrocuartas.github.io/post-something-frontend/'
                 }
             })
 }

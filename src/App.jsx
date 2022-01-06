@@ -1,11 +1,11 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Layout from "./components/Layout";
-import Sessions from "./pages/sessions";
-import Info from './pages/info'
-import Docs from './pages/docs'
-import Comments from "./pages/comments";
+const Layout = lazy(() => import ("./components/Layout")) 
+const Sessions = lazy(() => import ("./pages/sessions")) 
+const Info = lazy(() => import ("./pages/info")) 
+const Docs = lazy(() => import ("./pages/docs")) 
+const Comments = lazy(() => import ("./pages/comments")) 
 
  
 const App = () => {
