@@ -37,7 +37,7 @@ const Session = ({ session = {},  }) => {
                         <button onClick={happyHandler} className="badge rounded-pill bg-primary">{`Happy  ${happyState}`}</button>
                         <button onClick={sadHandler} className="badge rounded-pill bg-danger">{`Sad  ${sadState}`}</button>
                         <button onClick={careHandler} className="badge rounded-pill bg-info text-dark">{`Care  ${careState}`}</button>
-                        <Link to={`/post-something-frontend/comments/${_id}`} className="badge bg-dark">comment</Link>
+                        <Link to={`/comments/${_id}`} className="badge bg-dark">comment</Link>
                     </div>
                 </div>
             </div>
