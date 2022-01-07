@@ -29,7 +29,7 @@ const Comments = () => {
                 <div className="container-fluid">
                     <div className="row">
                         {data.comments.length !== 0 
-                                ? data.comments.map(comment=>{
+                                ? data.comments.reverse().map(comment=>{
                                         return <Comment key={comment._id} comment={comment}/>
                                   })
                                 :  <h1>No comments yet</h1>

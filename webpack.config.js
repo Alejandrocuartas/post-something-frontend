@@ -5,7 +5,11 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'docs'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/post-something-frontend/'
+    },
+    devServer: {
+        historyApiFallback: true
     },
     resolve: {
         extensions: ['.js', '.jsx']
