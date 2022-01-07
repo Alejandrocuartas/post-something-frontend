@@ -1,5 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createBrowserHistory } from "history";
+
+const history = createBrowserHistory()
 
 const Layout = lazy(() => import ("./components/Layout")) 
 const Sessions = lazy(() => import ("./pages/sessions")) 
@@ -10,7 +13,7 @@ const Comments = lazy(() => import ("./pages/comments"))
  
 const App = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter history={history}>
             <Layout>
                 <Suspense>
                     <Routes>
